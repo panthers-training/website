@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-12T20:00:00.000Z",
+  "title": "Design System: Carlos Ramírez — Preparador físico",
+  "extensions": {
+    "colorMeta": {
+      "primary-blue": {
+        "role": "primary",
+        "displayName": "Deep Performance Blue",
+        "canonical": "#0955A1",
+        "tonalRamp": ["#07152A", "#082B50", "#073F73", "#0955A1", "#2A75B7", "#6BA2D0", "#B1CEE6", "#EAF3FA"]
+      },
+      "electric-blue": {
+        "role": "secondary",
+        "displayName": "Electric Signal Blue",
+        "canonical": "#0099FF",
+        "tonalRamp": ["#00192A", "#003C66", "#006FAB", "#0099FF", "#3BAEFF", "#82C9FF", "#BDE4FF", "#EBF7FF"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Editorial Ink",
+        "canonical": "#181818",
+        "tonalRamp": ["#0A0A0A", "#181818", "#292929", "#444444", "#666666", "#929292", "#C2C2C2", "#F0F0F0"]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Clinical White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": ["#141414", "#303030", "#4D4D4D", "#707070", "#969696", "#BDBDBD", "#E1E1E1", "#FFFFFF"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "#F5F7F9",
+        "tonalRamp": ["#151719", "#2F3336", "#50565B", "#747B81", "#9BA3A9", "#BEC6CC", "#DDE3E7", "#F5F7F9"]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Quiet Line",
+        "canonical": "#D6DEE6",
+        "tonalRamp": ["#1A2025", "#39444D", "#5C6A75", "#82919D", "#AAB8C2", "#C2CDD5", "#D6DEE6", "#F5F8FA"]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Copy",
+        "canonical": "#666666",
+        "tonalRamp": ["#141414", "#292929", "#414141", "#666666", "#858585", "#A5A5A5", "#C7C7C7", "#EEEEEE"]
+      },
+      "pale-blue": {
+        "role": "tertiary",
+        "displayName": "Pale Blue Note",
+        "canonical": "#BEE7FF",
+        "tonalRamp": ["#07263A", "#0D4A6B", "#147AA6", "#4EABD1", "#8CCBEA", "#BEE7FF", "#DDF3FF", "#F4FBFF"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Archivo Display", "purpose": "Hero and contact headlines only; oversized, tight, and high-contrast." },
+      "headline": { "displayName": "Archivo Section Headline", "purpose": "Editorial section statements and the primary visual hierarchy below the hero." },
+      "label": { "displayName": "Archivo Utility Label", "purpose": "Uppercase actions, categories, placeholder tags, and metadata." }
+    },
+    "shadows": [
+      { "name": "mobile-menu-lift", "value": "0 10px 20px rgba(0,0,0,.15)", "purpose": "Separates the open mobile navigation from the hero." },
+      { "name": "recognition-stamp-ring", "value": "0 0 0 4px #0955A1, 0 0 0 5px rgba(255,255,255,.5)", "purpose": "Crisp registration outline around the INBA recognition stamp." }
+    ],
+    "motion": [
+      { "name": "state-standard", "value": "0.2s ease", "purpose": "Buttons, links, icon movement, and color state changes." },
+      { "name": "mobile-nav", "value": "0.25s ease", "purpose": "Vertical reveal of the mobile navigation panel." },
+      { "name": "reduced-motion", "value": "0.01ms", "purpose": "Respect prefers-reduced-motion by collapsing transitions and animation duration." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "1000px" },
+      { "name": "mobile", "value": "720px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Square white action used for the first contact step and section CTAs.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#contacto\">QUIERO ENTRENAR <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 19px; min-height: 49px; padding: 13px 19px; background: #FFFFFF; color: #0955A1; font: 800 10px/1.1 Archivo, Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background .2s ease, color .2s ease, transform .2s ease; } .ds-btn-primary svg { width: 18px; height: 18px; } .ds-btn-primary:hover { background: #0099FF; color: #FFFFFF; transform: translateY(-2px); } .ds-btn-primary:focus-visible { outline: 3px solid #0099FF; outline-offset: 4px; }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": "card-study",
+      "description": "A square-edged service cell with Lucide-style icon, explanation, and bottom-aligned link.",
+      "html": "<article class=\"ds-service-card\"><div class=\"ds-service-icon\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m6 7 12 10M4 9l3-3 3 3-3 3-3-3Zm10 8 3-3 3 3-3 3-3-3ZM10 9l4 4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></div><h3>Entrenamiento post lesión</h3><p>Reintegración progresiva al entrenamiento tras lesiones.</p><a href=\"#contacto\">MÁS INFORMACIÓN ↗</a></article>",
+      "css": ".ds-service-card { min-height: 277px; padding: 21px 20px 20px 0; border-top: 1px solid #D6DEE6; border-right: 1px solid #D6DEE6; display: flex; flex-direction: column; color: #181818; font-family: Archivo, Arial, sans-serif; } .ds-service-icon { margin-bottom: 43px; color: #0955A1; } .ds-service-icon svg { width: 32px; height: 32px; } .ds-service-card h3 { margin: 0 0 10px; font-size: 23px; line-height: 1.1; letter-spacing: -.05em; } .ds-service-card p { max-width: 220px; margin: 0 0 19px; color: #666666; font-size: 14px; line-height: 1.5; } .ds-service-card a { margin-top: auto; color: #0955A1; font-size: 10px; font-weight: 800; letter-spacing: .06em; text-decoration: none; } .ds-service-card a:hover { color: #0099FF; } .ds-service-card a:focus-visible { outline: 3px solid #0099FF; outline-offset: 4px; }"
+    },
+    {
+      "name": "Study Card",
+      "kind": "card",
+      "refersTo": "card-study",
+      "description": "White credential card on paper with electric evidence marker and category label.",
+      "html": "<article class=\"ds-study-card\"><span class=\"ds-study-category\">MÁSTER</span><h3>Medicina Deportiva</h3><p>Máster en Medicina Deportiva — ESNECA.</p></article>",
+      "css": ".ds-study-card { position: relative; min-height: 267px; padding: 20px; background: #FFFFFF; border: 1px solid #D6DEE6; display: flex; flex-direction: column; color: #181818; font-family: Archivo, Arial, sans-serif; } .ds-study-card::before { content: \"\"; position: absolute; top: 0; left: 20px; width: 28px; height: 3px; background: #0099FF; } .ds-study-category { align-self: flex-end; color: #666666; font-size: 9px; font-weight: 800; letter-spacing: .15em; } .ds-study-card h3 { margin: 47px 0 8px; font-size: 25px; line-height: 1.1; letter-spacing: -.06em; } .ds-study-card p { max-width: 260px; margin: 0; color: #666666; font-size: 14px; line-height: 1.45; }"
+    },
+    {
+      "name": "Testimonial Placeholder",
+      "kind": "card",
+      "refersTo": "card-testimonial",
+      "description": "Proof card that keeps the missing testimonial copy unmistakably replaceable.",
+      "html": "<article class=\"ds-testimonial-card\"><span class=\"ds-quote\">“</span><p class=\"ds-placeholder\">PLACEHOLDER · TESTIMONIO<br/>El testimonio se agregará aquí.</p><span class=\"ds-author\">Brayan García <small>· Triple Campeón INBA</small></span></article>",
+      "css": ".ds-testimonial-card { min-height: 260px; padding: 22px; background: #F5F7F9; color: #181818; display: flex; flex-direction: column; font-family: Archivo, Arial, sans-serif; } .ds-testimonial-card::before { content: \"\"; width: 32px; height: 3px; margin-bottom: 18px; background: #0099FF; } .ds-quote { color: #0955A1; font-size: 53px; line-height: .7; font-weight: 900; } .ds-placeholder { margin: 32px 0 auto; color: #666666; font-size: 13px; line-height: 1.55; } .ds-author { color: #181818; font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; } .ds-author small { color: #666666; font-size: 10px; font-weight: 500; text-transform: none; }"
+    },
+    {
+      "name": "Image Placeholder",
+      "kind": "custom",
+      "refersTo": "placeholder-blue",
+      "description": "Labeled portrait slot with crosshair and diagonal registration geometry.",
+      "html": "<div class=\"ds-image-placeholder\" data-placeholder=\"hero-portrait\"><span>PLACEHOLDER · RETRATO DE CARLOS</span><small>La imagen se agregará aquí</small><i aria-hidden=\"true\"></i></div>",
+      "css": ".ds-image-placeholder { position: relative; overflow: hidden; min-height: 320px; padding: 19px; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(145deg, #0C4A88, #052D5F); border: 1px solid rgba(255,255,255,.5); color: #FFFFFF; font-family: Archivo, Arial, sans-serif; } .ds-image-placeholder::after { content: \"\"; position: absolute; right: -14%; bottom: -17%; width: 72%; height: 72%; border: 1px solid rgba(0,153,255,.5); transform: rotate(31deg); } .ds-image-placeholder span, .ds-image-placeholder small { position: relative; z-index: 1; } .ds-image-placeholder span { font-size: 11px; font-weight: 800; letter-spacing: .08em; } .ds-image-placeholder small { margin-top: 5px; color: rgba(255,255,255,.55); font-size: 11px; } .ds-image-placeholder i { position: absolute; inset: 30% 20%; border: 1px solid rgba(255,255,255,.19); border-radius: 50%; }"
+    },
+    {
+      "name": "Direct Contact Link",
+      "kind": "button",
+      "refersTo": "button-header",
+      "description": "Underlined WhatsApp destination placeholder that becomes the final direct contact path.",
+      "html": "<a class=\"ds-contact-link\" href=\"#\"><span>+52 — — — — — — — —</span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-contact-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 20px; max-width: 440px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,.55); color: #FFFFFF; font: 700 clamp(21px, 2.7vw, 34px)/1 Archivo, Arial, sans-serif; letter-spacing: -.06em; text-decoration: none; transition: color .2s ease, border-color .2s ease; } .ds-contact-link svg { flex: 0 0 auto; width: 30px; height: 30px; color: #0099FF; } .ds-contact-link:hover { color: #BEE7FF; border-color: #0099FF; } .ds-contact-link:focus-visible { outline: 3px solid #0099FF; outline-offset: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Precision Training Field",
+    "overview": "This is an editorial athletic system for a preparation practice that joins performance and health. The visual world is direct and disciplined: a blue field carries the first decision, black and white create editorial contrast, and electric blue marks evidence, action, and movement. Density is intentional rather than ornamental, with compact headings, registration-like labels, rules, and diagrams giving the page the feel of a training plan made visible.\n\nLayouts alternate between blue command surfaces, clinical paper surfaces, white reading surfaces, and an ink-black gallery. Diagonal lines, orbital rings, underlines, and the circular INBA recognition stamp provide a recurring geometry without competing with the factual Spanish copy. Missing client imagery and social destinations stay explicit placeholders; they are never disguised as finished photography or links.",
+    "keyCharacteristics": [
+      "Precision-led performance and health positioning",
+      "Archivo in compact, high-contrast editorial hierarchy",
+      "Blue / electric-blue signal system on white, paper, and ink surfaces",
+      "Diagonals, circles, rules, and evidence cards as restrained athletic geometry",
+      "Explicit, replaceable image, testimonial, WhatsApp, and social placeholders"
+    ],
+    "rules": [
+      { "name": "The Four-Color Contract Rule", "body": "Brand fields, text, and actions stay within primary blue, electric blue, ink, white, and their documented cool support tones; do not introduce yellow or unrelated accent colors.", "section": "colors" },
+      { "name": "The Signal-Blue Rule", "body": "Electric blue is a signal, not a fill-everything color: reserve it for actions, emphasis, evidence markers, and motion cues.", "section": "colors" },
+      { "name": "The Editorial Compression Rule", "body": "Headings may be tightly tracked and tightly led, but paragraphs and credential lists retain readable line-height and never inherit display styling.", "section": "typography" },
+      { "name": "The Factual Emphasis Rule", "body": "Use electric-blue emphasis sparingly inside a heading; never turn an entire paragraph into a decorative texture.", "section": "typography" },
+      { "name": "The Flat Evidence Rule", "body": "Cards communicate structure through paper, white, rules, and spacing; shadows are not a substitute for hierarchy.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the visual thesis legible: preparation as a field of precision where performance and health are trained together.",
+      "Do use the documented blue/ink/white palette and Archivo hierarchy before adding any new visual token.",
+      "Do keep credentials, certifications, awards, and named athlete proof factual and easy to scan.",
+      "Do preserve square evidence cards, one-pixel rules, diagonal/orbital geometry, and restrained electric-blue signals.",
+      "Do keep data-placeholder hooks and explicit labels when an image, testimonial, social URL, or WhatsApp destination is missing.",
+      "Do maintain semantic headings, keyboard-visible focus, sufficient contrast, mobile menu state semantics, and reduced-motion behavior."
+    ],
+    "donts": [
+      "Don't introduce yellow, gradients unrelated to documented placeholder fields, rounded-pill UI, or decorative counters/numeric kickers.",
+      "Don't present placeholder images, testimonial copy, phone numbers, or social links as real production assets.",
+      "Don't add shadows to every card or use decoration to compete with the factual evidence.",
+      "Don't replace the direct WhatsApp path with a multi-step form without an explicit product decision.",
+      "Don't use emoji or a second icon library; interface iconography stays on Lucide React.",
+      "Don't let responsive layouts hide the thesis, credentials, proof, or contact action; stack and simplify rather than omit."
+    ]
+  }
+}

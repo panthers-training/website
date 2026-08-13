@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Archivo Variable", "Archivo", Arial, sans-serif;
+  --color-brand: #0955a1;
+  --color-brand-vivid: #0099ff;
+  --color-ink: #181818;
+  --color-paper: #f5f7f9;
+  --color-line: #d6dee6;
+  --color-muted: #666666;
+}
+
+/* Animation timelines stay global; layout and component styling live in markup utilities. */
+@keyframes scroll-right {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}

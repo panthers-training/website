@@ -22,3 +22,11 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+.cursor
+.gemini
+.claude
+.codex
+.kiro
+.opencode
+.pi
+.vscode

@@ -1,17 +1,347 @@
 ---
+import { ArrowIcon, CheckIcon, DumbbellIcon, MedicalIcon, MenuIcon, MessageIcon, NextIcon, PreviousIcon } from '../components/ActionIcon.jsx';
+import { Icon } from 'astro-icon/components'
+import Testimonials from '../components/Testimonials/index.astro';
+import '@fontsource-variable/archivo';
+import '../styles/global.css';
+import './styles.css';
 
+const navItems = [
+  { label: 'Estudios', href: '#estudios' },
+  { label: 'Beneficios para Atletas', href: '#beneficios' },
+  { label: 'Casos de éxito', href: '#success-figures' },
+  { label: 'Galería', href: '#galeria' },
+  { label: 'Contacto', href: '#contacto' },
+];
+
+const services = [
+  {
+    title: 'Competencias y tecnología deportiva',
+    text: 'Planificación y ejecución de programas para atletas de cualquier disciplina que buscan competir al más alto nivel.',
+    icon: DumbbellIcon,
+  },
+  {
+    title: 'Entrenamiento post lesión',
+    text: 'Reintegración progresiva al entrenamiento tras lesiones, cuidando cada fase del proceso para evitar recaídas.',
+    icon: MedicalIcon,
+  },
+  {
+    title: 'Online o presencial',
+    text: 'Programas personalizados a distancia con seguimiento continuo o entrenamiento presencial con supervisión directa.',
+    icon: CheckIcon,
+  },
+  {
+    title: 'Prescripción clínica',
+    text: 'Programa especializado para acompañar condiciones médicas como diabetes, presión alta, hernias o temas endocrinos.',
+    icon: MessageIcon,
+  },
+];
+
+const benefits = [
+  'Evaluación y programación con intención',
+  'Prescripción clínica del ejercicio',
+  'Seguimiento cercano de tu proceso',
+  'Un plan que entiende tu deporte',
+];
+
+const studies = [
+  { category: 'LICENCIATURA', title: 'Actividad Física y Deportes', text: 'Licenciatura en Actividad Física y Deportes — UABC Mexicali.' },
+  { category: 'MÁSTER', title: 'Medicina Deportiva', text: 'Máster en Medicina Deportiva — ESNECA.' },
+  { category: 'PREMIO 2026', title: 'Mejor Preparador Físico de México', text: 'Premio al Mejor Preparador Físico de México 2026.' },
+  { category: 'PREMIO 2026', title: 'Mejor Team de Culturismo', text: 'Premio al Mejor Team de Culturismo de México 2026.' },
+];
+
+const proof = [
+  { name: 'Brayan García', detail: 'Triple Campeón INBA', src: "/brayan.png" },
+  { name: 'Alexis Perez', detail: 'Representante mexicano de pádel en España', src: "/alexis.png" },
+  { name: 'Jayrick', detail: 'Ganador Latin Grammy', src: "/jayrick.png" },
+];
+
+const certifications = [
+  'Especialista en Programación para Hipertrofia.',
+  'Preparación Física para Artes Marciales Mixtas (MMA).',
+  'Preparación Física para el Deporte.',
+  'Capacidades Físicas Aplicadas a HYROX.',
+  'Programación para las diferentes categorías del Culturismo — APEKS Performance.',
+  'Certificación Internacional en Protección y Seguridad del Deportista (FIFA) — U.S. Center for SafeSport.',
+  'Programación del Entrenamiento Online.',
+  'Entrenamiento de Core y Ejercicios Posturales.',
+  'Prescripción del Entrenamiento Cardiovascular.',
+  'Entrenamiento Funcional y Evaluaciones Físico-Deportivas — Fitness & Health Institute.',
+  'Fundamentos y Aplicación del Entrenamiento de la Fuerza — Academia de Biomecánica Deportiva.',
+  'Entrenamiento Funcional, Módulo F1 — Active Training.',
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="es" class="scroll-smooth motion-reduce:scroll-auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Carlos Ramírez — preparación física, entrenamiento médico y readaptación post-lesión." />
+    <meta name="theme-color" content="#0955A1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Carlos Ramírez — Preparador físico</title>
+  </head>
+  <body class="m-0 bg-white font-sans text-base leading-[1.45] text-ink antialiased [&_a]:text-inherit [&_a]:no-underline [&_a:focus-visible]:outline-[3px] [&_a:focus-visible]:outline-offset-4 [&_a:focus-visible]:outline-brand-vivid [&_button]:font-[inherit] [&_button:focus-visible]:outline-[3px] [&_button:focus-visible]:outline-offset-4 [&_button:focus-visible]:outline-brand-vivid">
+    <!-- THESIS: La preparación física como campo de precisión: rendimiento y salud se entrenan juntos.
+    OWN-WORLD: Azul eléctrico, negro editorial y blanco clínico; tipografía Archivo en titulares compactos, líneas de registro y bloques de alta legibilidad.
+    STORY: El atleta reconoce un método serio, entiende cómo puede acompañarlo y da el primer paso por WhatsApp.
+    FIRST VIEWPORT: Barra de navegación azul, titular gigante a la izquierda, reconocimiento INBA como sello y un retrato placeholder editorial a la derecha; WhatsApp es la acción primaria.
+    FORM: Persuade, forma 2 — una landing de campo de rendimiento con diagonales, tipografía editorial y tarjetas de evidencia; seed key carlos-performance-field.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md -->
+
+    <header class="relative z-10 flex h-[84px] items-center justify-between bg-brand px-12 text-white max-[1000px]:px-7 max-[720px]:h-[72px] max-[720px]:px-5" data-header>
+      <a class="inline-flex items-center gap-[11px] text-[15px] leading-[.87] tracking-[-.05em] uppercase" href="/" aria-label="Carlos Ramírez, inicio">
+        <span class="grid size-[35px] place-items-center bg-white text-[14px] font-black tracking-[-.1em] text-brand" aria-hidden="true">CR</span>
+        <span class="[&_strong]:font-extrabold">Carlos<br /><strong>Ramírez</strong></span>
+      </a>
+      <nav class="ml-auto mr-[34px] flex gap-[clamp(18px,2.2vw,35px)] text-xs font-semibold tracking-[.01em] [&_a]:opacity-90 [&_a]:transition-[opacity,color] [&_a]:duration-200 [&_a:hover]:text-white [&_a:hover]:opacity-100 max-[1000px]:mr-[18px] max-[1000px]:gap-[15px] max-[1000px]:text-[10px] max-[720px]:hidden" aria-label="Navegación principal">
+        {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+      </nav>
+      <button class="hidden cursor-pointer place-items-center border-0 bg-transparent p-2 text-white max-[720px]:grid" type="button" aria-expanded="false" aria-controls="mobile-nav" data-menu-toggle>
+        <span class="sr-only">Abrir menú</span><MenuIcon size={25} />
+      </button>
+      <nav class="invisible pointer-events-none absolute inset-x-0 top-[72px] flex -translate-y-[150%] flex-col bg-brand px-5 pt-[15px] pb-[22px] shadow-[0_10px_20px_rgba(0,0,0,.15)] transition-transform duration-250 ease-in-out [&[data-open]]:visible [&[data-open]]:pointer-events-auto [&[data-open]]:translate-y-0 [&_a]:border-b [&_a]:border-white/20 [&_a]:py-[14px] [&_a]:text-[13px] [&_a]:font-bold min-[721px]:hidden" id="mobile-nav" data-mobile-nav aria-label="Navegación móvil">
+        {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+      </nav>
+    </header>
+
+    <main>
+      <section class="flex min-h-0 flex-col items-center overflow-hidden bg-black text-white" aria-labelledby="hero-title">
+        <div class="p-24">
+          <div class="flex h-full max-w-229.5 h-[] bg-[#1a1a1a]">
+            <figure class="w-1/2 min-h-full p-10 "  data-placeholder="hero-portrait" role="img" aria-label="Placeholder: retrato de Carlos Ramírez por agregar">
+              <img class="min-h-full object-cover border text-muted" src="/winner_carlos.jpg" alt="Carlos Ramirez Foto de perfil deportivo" />
+            </figure>
+            <div class="w-1/2 pr-18 py-18 flex flex-col justify-between gap-y-12">
+              <h1 id="hero-title" class="m-0 leading-0.5 font-bold tracking-[-.04em] text-[#dedede]">
+                <span class="text-2xl leading-none text-brand">LAFYD.</span>
+                <span class="text-[108px] tracking-tighter leading-none">Carlos Ramírez</span>
+              </h1>
+              <p class="text-base leading-[1.45] text-white">Especializado en alto rendimiento y medicina deportiva para llevar a cada atleta o persona a su máximo potencial físico.</p>
+              <p class="m-0 text-center text-sm">Reconocido como <strong>EL MEJOR PREPARADOR FÍSICO DE MÉXICO 2026</strong> por SUPER SHOW MX INBA</p>
+            </div>
+          </div>
+        </div>
+        <div class="mx-[-20px] flex min-h-[75px] w-[calc(100%+40px)] flex-wrap items-center justify-center gap-x-4 bg-brand p-5 [&_p]:m-0 [&_p]:text-[22px] [&_p]:leading-[1.2] [&_p]:font-semibold [&_p]:tracking-[-.01em] [&_p]:text-[#eaeaea] max-[760px]:mx-[-14px] max-[760px]:w-[calc(100%+28px)] max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-3 max-[760px]:px-7 max-[760px]:py-6 max-[760px]:[&_p]:text-lg" aria-label="Principios del entrenamiento">
+          <p class="after:content-['•'] after:ml-4">Para atletas de todo tipo</p>
+          <p class="after:content-['•'] after:ml-4">Resultados medibles</p>
+          <p>Entrenamiento para historial clínico</p>
+        </div>
+      </section>
+      <section class="bg-paper  py-[112px] pb-[118px] max-[720px]:py-[79px] max-[720px]:pb-[82px]" id="success-figures" aria-labelledby="success-figures-title">
+        <div class="mx-auto w-[min(1200px,calc(100%-96px))] max-[1000px]:w-[min(calc(100%-56px),800px)] max-[720px]:w-[calc(100%-40px)]">
+          <div class="w-full" data-testimonial-carousel aria-roledescription="carrusel" aria-label="Atletas destacados">
+            <div class="flex flex-col lg:flex-row w-full lg:justify-between top-0 mb-15.5">
+              <h2 id="success-figures-title" class="m-0 font-black tracking-[-.08em] text-3xl">
+                Casos de éxito.
+              </h2>
+              <p class="mb-1 max-w-55 text-muted">Historias de personas que han puesto su confianza en mi trabajo.</p>
+            </div>
+            <div class="overflow-x-auto outline-offset-[6px] [scrollbar-width:none] [scroll-snap-type:x_mandatory] [&::-webkit-scrollbar]:hidden rounded" data-testimonial-viewport tabindex="0">
+              <div class="flex relative">
+                {proof.map((item, index) => (
+                  <article class="max-h-1/5 grid min-w-0 flex-[0_0_100%] grid-cols-[minmax(0,1.55fr)_minmax(125px,.80fr)] bg-paper [scroll-snap-align:start] [scroll-snap-stop:always]]" data-testimonial-slide data-placeholder={`testimonial-${index + 1}`} aria-label={`${index + 1} de ${proof.length}`}>
+                    <img
+                      class="block w-5/6 max-h-110 bg-ink object-contain"
+                      src={item.src}
+                      alt={`Placeholder para la imagen de ${item.name}`}
+                      loading="lazy"
+                    />
+                    <div class="flex">
+                      <span class="flex flex-col justify-end w-full pt-4 px-4 pb-12 text-ink uppercase">
+                        <span class="lg:font-extrabold lg:text-3xl">{item.name}</span>
+                        <small class="lg:text-md">{item.detail}</small>
+                      </span>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+            <div class="mt-4.5 flex items-center justify-between">
+              <p class="m-0 text-[11px] font-bold tracking-[.1em] text-muted" aria-live="polite"><span data-testimonial-current>1</span> / {proof.length}</p>
+              <div class="flex gap-2 [&_button]:grid [&_button]:size-[46px] [&_button]:cursor-pointer [&_button]:place-items-center [&_button]:border [&_button]:border-line [&_button]:bg-white [&_button]:text-ink [&_button]:transition-colors [&_button]:duration-200 [&_button:hover:not(:disabled)]:border-brand [&_button:hover:not(:disabled)]:bg-brand [&_button:hover:not(:disabled)]:text-white [&_button:disabled]:cursor-not-allowed [&_button:disabled]:bg-paper [&_button:disabled]:text-[#aaa]">
+                <button type="button" data-testimonial-previous aria-label="Ver atleta anterior"><PreviousIcon size={22} /></button>
+                <button type="button" data-testimonial-next aria-label="Ver siguiente atleta"><NextIcon size={22} /></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="bg-brand p-0" id="servicios" aria-labelledby="services-title">
+        <div class="mx-auto w-[min(1200px,calc(100%-96px))] max-[1000px]:w-[min(calc(100%-56px),800px)] max-[720px]:w-[calc(100%-40px)]">
+          <h2 id="services-title" class="sr-only">Servicios de entrenamiento</h2>
+          <div class="flex flex-col py-25">
+            {services.map(({ title, text, icon: Icon }, index) => (
+              <article class="group grid min-h-80 grid-cols-2 max-[760px]:min-h-0 max-[760px]:grid-cols-1">
+                <div class:list={[
+                  'bg-brand flex min-w-0 flex-col items-start justify-center p-[clamp(36px,6vw,72px)] max-[760px]:order-2 max-[760px]:min-h-[280px] max-[760px]:px-7 max-[760px]:py-9',
+                  index % 2 === 1 && 'order-2',
+                ]}>
+                  <h3 class="m-0 mb-[18px] max-w-[520px] text-[clamp(28px,3vw,42px)] leading-[.96] font-bold tracking-[-.04em] text-ink uppercase max-[760px]:text-[clamp(28px,9vw,38px)]">{title}</h3>
+                  <p class="m-0 mb-7 max-w-[570px] text-[clamp(16px,1.6vw,22px)] leading-[1.45] text-paper max-[760px]:text-base">{text}</p>
+                </div>
+                <div class:list={[
+                  'bg-ink relative rounded-2xl shadow-xl overflow-hidden grid min-h-80 place-items-center overflow-hidden text-white max-[760px]:order-1 max-[760px]:min-h-[220px]',
+                  index % 2 === 1 ? 'order-1' : '',
+                ]} aria-hidden="true">
+                  <Icon className={`relative z-[1] h-auto w-[clamp(72px,9vw,120px)] transition-transform duration-350 ease-[cubic-bezier(.2,.8,.2,1)] group-hover:scale-[1.04] ${index % 2 === 1 ? 'group-hover:translate-y-2' : 'group-hover:-translate-y-2'}`} size={104} strokeWidth={1.35} />
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <Testimonials />
+      <!-- <section class="benefits" id="beneficios" aria-labelledby="benefits-title">
+        <div class="benefits-orbit" aria-hidden="true"></div>
+        <div class="container benefits-layout">
+          <div>
+            <h2 id="benefits-title">Tu mejor versión<br /><em>se construye.</em></h2>
+            <p class="benefits-lede">No hay dos cuerpos iguales. Por eso el plan se ajusta a tu disciplina, tu historia y lo que hoy necesitas para avanzar.</p>
+            <a class="button button-light" href="#contacto">Comenzar proceso <ArrowIcon size={18} /></a>
+          </div>
+          <div class="benefit-list">
+            {benefits.map((benefit, index) => (
+              <div class="benefit-item"><p>{benefit}</p><CheckIcon size={20} /></div>
+            ))}
+            <div class="benefit-note"><span class="benefit-note-mark">+</span><p>Entrena con estructura.<br /><strong>Muévete con confianza.</strong></p></div>
+          </div>
+        </div>
+      </section> -->
+
+      <section class="bg-paper py-[112px] pb-[118px] max-[720px]:py-[79px] max-[720px]:pb-[82px]" id="estudios" aria-labelledby="studies-title">
+        <div class="mx-auto w-[min(1200px,calc(100%-96px))] max-[1000px]:w-[min(calc(100%-56px),800px)] max-[720px]:w-[calc(100%-40px)]">
+          <header class="mb-[58px] grid grid-cols-[minmax(0,1.35fr)_minmax(280px,.65fr)] items-end gap-x-[72px] gap-y-[26px] max-[720px]:mb-[43px] max-[720px]:block">
+            <h2 id="studies-title" class="m-0 text-[clamp(48px,6.3vw,79px)] leading-[.88] font-black tracking-[-.075em] text-ink [&_span]:text-brand max-[720px]:mb-7 max-[720px]:text-[clamp(48px,15vw,68px)]">Formación y<br /><span>experiencia destacada.</span></h2>
+            <div class="pb-[5px] max-[720px]:mt-7">
+              <p class="m-0 mb-[25px] max-w-[390px] text-base leading-[1.55] text-muted text-end">La práctica se sostiene en formación continua, experiencia aplicada y reconocimientos que respaldan cada proceso.</p>
+            </div>
+          </header>
+          <ol class="m-0 list-none border-line p-0" aria-label="Formación y experiencia destacada">
+            {studies.map((study, index) => (
+              <li class="flex last:border-b-0 border-b border-line py-6 max-[720px]:grid-cols-[32px_minmax(0,1fr)_20px] max-[720px]:gap-[14px]">
+                <span class="grow font-extrabold tracking-[.12em] text-brand uppercase max-[720px]:col-start-2">{study.category}</span>
+                <div class="flex flex-col">
+                  <h3 class="text-end m-0 text-[25px] leading-none font-bold tracking-[-.055em] text-ink">{study.title}</h3>
+                  <p class="text-end mt-[10px] mb-0 text-base leading-[1.5] text-muted">{study.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <div class="mt-[110px] grid scroll-mt-6 grid-cols-[minmax(230px,.55fr)_minmax(0,1.45fr)] gap-[72px] border-line pt-7 max-[720px]:mt-[78px] max-[720px]:block" id="certificados">
+            <div class="max-[720px]:mb-[34px]">
+              <h3 class="mt-[18px] mb-4 text-6xl leading-[.9] font-black tracking-[-.07em] text-ink">Certificados</h3>
+              <p class="m-0 max-w-[280px] text-base leading-[1.5] text-muted">Preparación física, entrenamiento médico y prescripción clínica.</p>
+            </div>
+            <ol class="m-0 list-none p-0" aria-label="Certificaciones profesionales">
+              {certifications.map((certification, index) =>
+              <li class="flex justify-end gap-[14px] last:border-b-0 border-b border-line py-[17px] text-base leading-[1.45] text-ink">
+                <span>{certification}</span>
+              </li>)}
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-ink py-[112px] pb-[118px] text-white max-[720px]:py-[79px] max-[720px]:pb-[90px]" id="galeria" aria-labelledby="gallery-title">
+        <div class="mx-auto w-[min(1200px,calc(100%-96px))] max-[1000px]:w-[min(calc(100%-56px),800px)] max-[720px]:w-[calc(100%-40px)]">
+          <div class="grid grid-cols-[1.25fr_.7fr_.85fr] grid-rows-[190px_150px] gap-3 max-[720px]:grid-cols-2 max-[720px]:grid-rows-[210px_155px]">
+            <div class="row-span-2 flex flex-col justify-between overflow-hidden border border-white/35 bg-[linear-gradient(135deg,#252525,#114F88)] p-[17px] [&_strong]:text-[11px] [&_strong]:tracking-[.09em] [&_small]:text-[11px] [&_small]:text-white/60 max-[720px]:col-span-2 max-[720px]:row-auto max-[720px]:p-[13px] max-[720px]:[&_strong]:text-[9px]" data-placeholder="gallery-01"><strong>PLACEHOLDER · SESIÓN</strong><small>Imagen por agregar</small></div>
+            <div class="row-span-2 flex flex-col justify-between overflow-hidden border border-white/35 bg-[linear-gradient(150deg,#0A3D73,#181818)] p-[17px] [&_strong]:text-[11px] [&_strong]:tracking-[.09em] [&_small]:text-[11px] [&_small]:text-white/60 max-[720px]:col-auto max-[720px]:row-auto max-[720px]:p-[13px] max-[720px]:[&_strong]:text-[9px]" data-placeholder="gallery-02"><strong>PLACEHOLDER · MOVIMIENTO</strong><small>Imagen por agregar</small></div>
+            <div class="col-start-3 flex flex-col justify-between overflow-hidden border border-white/35 bg-[linear-gradient(145deg,#333,#0955A1)] p-[17px] [&_strong]:text-[11px] [&_strong]:tracking-[.09em] [&_small]:text-[11px] [&_small]:text-white/60 max-[720px]:col-auto max-[720px]:p-[13px] max-[720px]:[&_strong]:text-[9px]" data-placeholder="gallery-03"><strong>PLACEHOLDER · ESPACIO</strong><small>Imagen por agregar</small></div>
+          </div>
+        </div>
+      </section>
+      <section id="beneficios" class="py-[112px] pb-[118px] flex flex-col gap-y-4 text-white max-[720px]:py-[79px] max-[720px]:pb-[90px] lg:min-h-135" aria-labelledby="beneficios-title">
+        <h2 class="mx-auto w-[min(1200px,calc(100%-96px))] max-[1000px]:w-[min(calc(100%-56px),800px)] max-[720px]:w-[calc(100%-40px)] text-center text-4xl font-bold uppercase max-w-78 tracking-tight">Beneficios para atletas</h2>
+        <p class="mx-auto w-[min(1200px,calc(100%-96px))] max-[1000px]:w-[min(calc(100%-56px),800px)] max-[720px]:w-[calc(100%-40px)] text-center text-2xl">
+          Atletas de que lleven preparación conmigo contarán con beneficios exclusivos con marcas deportivas de suplementos, ropa deportiva y patrocinadores para sus competencias.
+        </p>
+      </section>
+
+      <section class="relative overflow-hidden bg-brand py-[103px] pb-28 text-white after:pointer-events-none after:absolute after:right-[-2vw] after:bottom-[-2vw] after:text-[38vw] after:leading-[.7] after:font-black after:tracking-[-.14em] after:text-brand-vivid/20 max-[720px]:py-[77px] max-[720px]:pb-[85px]" id="contacto" aria-labelledby="contact-title">
+        <div class="relative z-[1] mx-auto grid w-[min(1200px,calc(100%-96px))] grid-cols-2 gap-20 max-[1000px]:w-[min(calc(100%-56px),800px)] max-[720px]:block max-[720px]:w-[calc(100%-40px)]">
+          <div class="flex items-center">
+            <h2 id="contact-title" class="mt-0 mb-7 text-[clamp(60px,8.7vw,112px)] leading-[.83] tracking-[-.1em] [&_em]:text-brand-vivid [&_em]:not-italic max-[720px]:text-[clamp(67px,19vw,92px)]">
+              Contáctame
+            </h2>
+          </div>
+          <div class="flex flex-col items-center gap-y-4 pb-[5px] max-[720px]:mt-[53px]">
+            <figure class="max-w-3xs max-h-3xs flex items-center justify-center overflow-hidden rounded-lg border border-white/55 bg-white/5">
+              <img src="/qrcode.png" alt="Whatsapp Link"/>
+            </figure>
+            <a href="https://api.whatsapp.com/send/?phone=5216531039219&text=Hola%21+Me+interesan+los+entrenamientos&type=phone_number&app_absent=0" class="inline-flex max-w-[440px] items-center justify-between gap-5 border-b border-white/55 pb-[14px] text-base font-bold tracking-[-.06em] text-white [&_svg]:shrink-0 [&_svg]:text-brand-vivid max-[720px]:text-[21px]" href="#" aria-label="WhatsApp">
+              Comenzar una conversación por WhatsApp
+              <!-- <Icon height={40} width={40} name="simple-icons:whatsapp" class="text-paper" /> -->
+              <ArrowIcon size={30} />
+            </a>
+            <span class="mt-[13px] text-xs text-[#BEE7FF]">Disponible para sesiones online y presenciales.</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-ink pt-[39px] pb-[25px] text-white">
+      <div class="mx-auto flex w-[min(1200px,calc(100%-96px))] items-center justify-between gap-[30px] pb-[45px] max-[1000px]:w-[min(calc(100%-56px),800px)] max-[720px]:w-[calc(100%-40px)] max-[720px]:flex-wrap max-[720px]:items-start">
+        <a class="inline-flex items-center gap-[11px] text-[15px] leading-[.87] tracking-[-.05em] uppercase" href="/" aria-label="Carlos Ramírez, inicio"><span class="grid size-[35px] place-items-center bg-white text-[14px] font-black tracking-[-.1em] text-ink" aria-hidden="true">CR</span><span class="[&_strong]:font-extrabold">Carlos<br /><strong>Ramírez</strong></span></a>
+
+        <div class="flex flex-col items-end gap-2 text-[8px] font-bold tracking-[.08em] text-[#A3A3A3]" data-placeholder="social-links">
+          <span>
+            Encuentrame en redes sociales
+          </span>
+          <div class="flex gap-x-2">
+            <a href="#" aria-label="Instagram">
+              <Icon height={48} width={48} name="simple-icons:instagram" class="text-paper" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mx-auto flex w-[min(1200px,calc(100%-96px))] justify-between border-t border-[#333] pt-[17px] text-[10px] tracking-[.07em] text-[#A3A3A3] uppercase max-[1000px]:w-[min(calc(100%-56px),800px)] max-[720px]:w-[calc(100%-40px)] max-[720px]:text-[8px]"><span>© 2026 Carlos Ramírez</span></div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector('[data-menu-toggle]');
+      const mobileNav = document.querySelector('[data-mobile-nav]');
+      toggle?.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!open));
+        mobileNav?.toggleAttribute('data-open', !open);
+      });
+      mobileNav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+        toggle?.setAttribute('aria-expanded', 'false');
+        mobileNav.removeAttribute('data-open');
+      }));
+
+      const carousel = document.querySelector('[data-testimonial-carousel]');
+      const viewport = carousel?.querySelector('[data-testimonial-viewport]');
+      const slides = Array.from(carousel?.querySelectorAll('[data-testimonial-slide]') ?? []);
+      const previous = carousel?.querySelector('[data-testimonial-previous]');
+      const next = carousel?.querySelector('[data-testimonial-next]');
+      const current = carousel?.querySelector('[data-testimonial-current]');
+      let testimonialIndex = 0;
+
+      const updateTestimonialCarousel = (index) => {
+        if (!(viewport instanceof HTMLElement) || slides.length === 0) return;
+        testimonialIndex = Math.max(0, Math.min(index, slides.length - 1));
+        viewport.scrollTo({ left: testimonialIndex * viewport.clientWidth, behavior: 'smooth' });
+        if (current) current.textContent = String(testimonialIndex + 1);
+        if (previous instanceof HTMLButtonElement) previous.disabled = testimonialIndex === 0;
+        if (next instanceof HTMLButtonElement) next.disabled = testimonialIndex === slides.length - 1;
+      };
+
+      previous?.addEventListener('click', () => updateTestimonialCarousel(testimonialIndex - 1));
+      next?.addEventListener('click', () => updateTestimonialCarousel(testimonialIndex + 1));
+      viewport?.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') updateTestimonialCarousel(testimonialIndex - 1);
+        if (event.key === 'ArrowRight') updateTestimonialCarousel(testimonialIndex + 1);
+      });
+      viewport?.addEventListener('scrollend', () => {
+        if (viewport instanceof HTMLElement) updateTestimonialCarousel(Math.round(viewport.scrollLeft / viewport.clientWidth));
+      });
+      updateTestimonialCarousel(0);
+    </script>
+  </body>
 </html>

@@ -12,6 +12,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.2.1"
+    "@astrojs/react": "^6.0.2",
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@iconify-json/lets-icons": "1.2.2",
+    "@iconify-json/simple-icons": "1.2.93",
+    "@iconify-json/solar": "1.2.6",
+    "@iconify/react": "6.0.2",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.2.1",
+    "astro-icon": "1.1.5",
+    "lucide-react": "^1.31.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "simple-icons": "16.28.0",
+    "tailwindcss": "^4.3.3"
   }
 }
