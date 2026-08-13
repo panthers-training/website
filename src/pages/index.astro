@@ -2,6 +2,7 @@
 import { ArrowIcon, CheckIcon, DumbbellIcon, MedicalIcon, MenuIcon, MessageIcon, NextIcon, PreviousIcon } from '../components/ActionIcon.jsx';
 import { Icon } from 'astro-icon/components'
 import Testimonials from '../components/Testimonials/index.astro';
+import Hero from '../components/Hero/index.astro';
 import '@fontsource-variable/archivo';
 import '../styles/global.css';
 import './styles.css';
@@ -9,8 +10,8 @@ import './styles.css';
 const navItems = [
   { label: 'Estudios', href: '#estudios' },
   { label: 'Beneficios para Atletas', href: '#beneficios' },
-  { label: 'Casos de éxito', href: '#success-figures' },
-  { label: 'Galería', href: '#galeria' },
+  { label: 'Testimonios', href: '#testimonios' },
+  { label: 'Galería', href: 'https://www.instagram.com/panthers.training' },
   { label: 'Contacto', href: '#contacto' },
 ];
 
@@ -107,28 +108,7 @@ const certifications = [
     </header>
 
     <main>
-      <section class="flex min-h-0 flex-col items-center overflow-hidden bg-black text-white" aria-labelledby="hero-title">
-        <div class="p-24">
-          <div class="flex h-full max-w-229.5 h-[] bg-[#1a1a1a]">
-            <figure class="w-1/2 min-h-full p-10 "  data-placeholder="hero-portrait" role="img" aria-label="Placeholder: retrato de Carlos Ramírez por agregar">
-              <img class="min-h-full object-cover border text-muted" src="/winner_carlos.jpg" alt="Carlos Ramirez Foto de perfil deportivo" />
-            </figure>
-            <div class="w-1/2 pr-18 py-18 flex flex-col justify-between gap-y-12">
-              <h1 id="hero-title" class="m-0 leading-0.5 font-bold tracking-[-.04em] text-[#dedede]">
-                <span class="text-2xl leading-none text-brand">LAFYD.</span>
-                <span class="text-[108px] tracking-tighter leading-none">Carlos Ramírez</span>
-              </h1>
-              <p class="text-base leading-[1.45] text-white">Especializado en alto rendimiento y medicina deportiva para llevar a cada atleta o persona a su máximo potencial físico.</p>
-              <p class="m-0 text-center text-sm">Reconocido como <strong>EL MEJOR PREPARADOR FÍSICO DE MÉXICO 2026</strong> por SUPER SHOW MX INBA</p>
-            </div>
-          </div>
-        </div>
-        <div class="mx-[-20px] flex min-h-[75px] w-[calc(100%+40px)] flex-wrap items-center justify-center gap-x-4 bg-brand p-5 [&_p]:m-0 [&_p]:text-[22px] [&_p]:leading-[1.2] [&_p]:font-semibold [&_p]:tracking-[-.01em] [&_p]:text-[#eaeaea] max-[760px]:mx-[-14px] max-[760px]:w-[calc(100%+28px)] max-[760px]:flex-col max-[760px]:items-start max-[760px]:gap-3 max-[760px]:px-7 max-[760px]:py-6 max-[760px]:[&_p]:text-lg" aria-label="Principios del entrenamiento">
-          <p class="after:content-['•'] after:ml-4">Para atletas de todo tipo</p>
-          <p class="after:content-['•'] after:ml-4">Resultados medibles</p>
-          <p>Entrenamiento para historial clínico</p>
-        </div>
-      </section>
+      <Hero />
       <section class="bg-paper  py-[112px] pb-[118px] max-[720px]:py-[79px] max-[720px]:pb-[82px]" id="success-figures" aria-labelledby="success-figures-title">
         <div class="mx-auto w-[min(1200px,calc(100%-96px))] max-[1000px]:w-[min(calc(100%-56px),800px)] max-[720px]:w-[calc(100%-40px)]">
           <div class="w-full" data-testimonial-carousel aria-roledescription="carrusel" aria-label="Atletas destacados">
@@ -233,12 +213,12 @@ const certifications = [
           </ol>
           <div class="mt-[110px] grid scroll-mt-6 grid-cols-[minmax(230px,.55fr)_minmax(0,1.45fr)] gap-[72px] border-line pt-7 max-[720px]:mt-[78px] max-[720px]:block" id="certificados">
             <div class="max-[720px]:mb-[34px]">
-              <h3 class="mt-[18px] mb-4 text-6xl leading-[.9] font-black tracking-[-.07em] text-ink">Certificados</h3>
-              <p class="m-0 max-w-[280px] text-base leading-[1.5] text-muted">Preparación física, entrenamiento médico y prescripción clínica.</p>
+              <h3 class="mt-[18px] mb-4 text-4xl lg:text-6xl leading-[.9] font-black tracking-[-.07em] text-ink text-end lg:text-start">Certificados</h3>
+              <p class="m-0 lg:max-w-[280px] text-base leading-[1.5] text-muted text-end lg:text-start">Preparación física, entrenamiento médico y prescripción clínica.</p>
             </div>
             <ol class="m-0 list-none p-0" aria-label="Certificaciones profesionales">
               {certifications.map((certification, index) =>
-              <li class="flex justify-end gap-[14px] last:border-b-0 border-b border-line py-[17px] text-base leading-[1.45] text-ink">
+              <li class="flex lg:justify-end gap-[14px] last:border-b-0 border-b border-line py-[17px] text-base leading-[1.45] text-ink">
                 <span>{certification}</span>
               </li>)}
             </ol>
@@ -246,20 +226,34 @@ const certifications = [
         </div>
       </section>
 
-      <section class="bg-ink py-[112px] pb-[118px] text-white max-[720px]:py-[79px] max-[720px]:pb-[90px]" id="galeria" aria-labelledby="gallery-title">
+      <!-- <section class="bg-ink py-[112px] pb-[118px] text-white max-[720px]:py-[79px] max-[720px]:pb-[90px]" id="galeria" aria-labelledby="gallery-title">
         <div class="mx-auto w-[min(1200px,calc(100%-96px))] max-[1000px]:w-[min(calc(100%-56px),800px)] max-[720px]:w-[calc(100%-40px)]">
+          <h2 class="text-2xl lg:text-6xl font-bold uppercase">Galería</h2>
           <div class="grid grid-cols-[1.25fr_.7fr_.85fr] grid-rows-[190px_150px] gap-3 max-[720px]:grid-cols-2 max-[720px]:grid-rows-[210px_155px]">
-            <div class="row-span-2 flex flex-col justify-between overflow-hidden border border-white/35 bg-[linear-gradient(135deg,#252525,#114F88)] p-[17px] [&_strong]:text-[11px] [&_strong]:tracking-[.09em] [&_small]:text-[11px] [&_small]:text-white/60 max-[720px]:col-span-2 max-[720px]:row-auto max-[720px]:p-[13px] max-[720px]:[&_strong]:text-[9px]" data-placeholder="gallery-01"><strong>PLACEHOLDER · SESIÓN</strong><small>Imagen por agregar</small></div>
-            <div class="row-span-2 flex flex-col justify-between overflow-hidden border border-white/35 bg-[linear-gradient(150deg,#0A3D73,#181818)] p-[17px] [&_strong]:text-[11px] [&_strong]:tracking-[.09em] [&_small]:text-[11px] [&_small]:text-white/60 max-[720px]:col-auto max-[720px]:row-auto max-[720px]:p-[13px] max-[720px]:[&_strong]:text-[9px]" data-placeholder="gallery-02"><strong>PLACEHOLDER · MOVIMIENTO</strong><small>Imagen por agregar</small></div>
-            <div class="col-start-3 flex flex-col justify-between overflow-hidden border border-white/35 bg-[linear-gradient(145deg,#333,#0955A1)] p-[17px] [&_strong]:text-[11px] [&_strong]:tracking-[.09em] [&_small]:text-[11px] [&_small]:text-white/60 max-[720px]:col-auto max-[720px]:p-[13px] max-[720px]:[&_strong]:text-[9px]" data-placeholder="gallery-03"><strong>PLACEHOLDER · ESPACIO</strong><small>Imagen por agregar</small></div>
+            <div class="row-span-2 flex flex-col justify-between overflow-hidden border border-white/35 bg-[linear-gradient(135deg,#252525,#114F88)] [&_strong]:text-[11px] [&_strong]:tracking-[.09em] [&_small]:text-[11px] [&_small]:text-white/60 max-[720px]:col-span-2 max-[720px]:row-auto max-[720px]:p-[13px] max-[720px]:[&_strong]:text-[9px]" data-placeholder="gallery-01">
+              <figure class="w-full">
+                <img src="/about_4.jpg" alt="Gonzalo"/>
+              </figure>
+            </div>
+            <div class="row-span-2 flex flex-col justify-between overflow-hidden border border-white/35 bg-[linear-gradient(150deg,#0A3D73,#181818)] [&_strong]:text-[11px] [&_strong]:tracking-[.09em] [&_small]:text-[11px] [&_small]:text-white/60 max-[720px]:col-auto max-[720px]:row-auto max-[720px]:p-[13px] max-[720px]:[&_strong]:text-[9px]" data-placeholder="gallery-02">
+              <figure class="w-full">
+                <img src="/gonzalo.jpg" alt="Gonzalo"/>
+              </figure>
+            </div>
+            <div class="col-start-3 flex flex-col justify-between overflow-hidden border border-white/35 bg-[linear-gradient(145deg,#333,#0955A1)] [&_strong]:text-[11px] [&_strong]:tracking-[.09em] [&_small]:text-[11px] [&_small]:text-white/60 max-[720px]:col-auto max-[720px]:p-[13px] max-[720px]:[&_strong]:text-[9px]" data-placeholder="gallery-03">
+              <figure class="w-full">
+                <img src="/about_4.jpg" alt="Gonzalo"/>
+              </figure>
+            </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <section id="beneficios" class="py-[112px] pb-[118px] flex flex-col gap-y-4 text-white max-[720px]:py-[79px] max-[720px]:pb-[90px] lg:min-h-135" aria-labelledby="beneficios-title">
         <h2 class="mx-auto w-[min(1200px,calc(100%-96px))] max-[1000px]:w-[min(calc(100%-56px),800px)] max-[720px]:w-[calc(100%-40px)] text-center text-4xl font-bold uppercase max-w-78 tracking-tight">Beneficios para atletas</h2>
         <p class="mx-auto w-[min(1200px,calc(100%-96px))] max-[1000px]:w-[min(calc(100%-56px),800px)] max-[720px]:w-[calc(100%-40px)] text-center text-2xl">
           Atletas de que lleven preparación conmigo contarán con beneficios exclusivos con marcas deportivas de suplementos, ropa deportiva y patrocinadores para sus competencias.
         </p>
+        <a class="bg-brand mt-4 w-fit py-4 px-4 lg:px-8 uppercase shadow-lg rounded-full mx-auto text-center text-xl lg:text-4xl" href="https://www.instagram.com/panthers.training">Ver Galería</a>
       </section>
 
       <section class="relative overflow-hidden bg-brand py-[103px] pb-28 text-white after:pointer-events-none after:absolute after:right-[-2vw] after:bottom-[-2vw] after:text-[38vw] after:leading-[.7] after:font-black after:tracking-[-.14em] after:text-brand-vivid/20 max-[720px]:py-[77px] max-[720px]:pb-[85px]" id="contacto" aria-labelledby="contact-title">
@@ -293,7 +287,7 @@ const certifications = [
             Encuentrame en redes sociales
           </span>
           <div class="flex gap-x-2">
-            <a href="#" aria-label="Instagram">
+            <a href="https://www.instagram.com/cramirez._7/" aria-label="Instagram">
               <Icon height={48} width={48} name="simple-icons:instagram" class="text-paper" />
             </a>
           </div>
